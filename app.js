@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./server/routes');
 var user = require('./server/routes/user');
+var apiRoutes = require('./server/api/TasksApi');
 var http = require('http');
 var path = require('path');
 
@@ -36,6 +37,12 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+//Api
+app.get('/api/tasks', apiRoutes.GetAllTasks);
+app.post('/api/tasks', apiRoutes.AddNewTask);
+app.put('/api/tasks', apiRoutes.EditTask);
+app.delete('/api/tasks', apiRoutes.RemoveTask);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
