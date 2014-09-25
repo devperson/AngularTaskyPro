@@ -1,0 +1,20 @@
+<div data-ng-controller="indexController" >
+    <h4>Notes</h4>
+    <div class="list">
+        <li ng-repeat="task in tasks" >
+           <div class="liContainer" data-ng-dblclick="startEdit(task)">
+                <span data-ng-hide="task.isEdit" > {{ task.text }}</span>
+                <input type="text" data-ng-model="task.text"
+                                   ng-Enter-Action="endEdit(task)"
+                                   data-ng-show="task.isEdit"
+                                   data-ng-blur="task.isEdit = false"
+                                   ng-Select-Text>
+            </div>
+
+            <button data-ng-click="removeTask(task)">Remove</button>
+        </li>
+
+        <input class="txtAdd" type="text" data-ng-model="text" ng-Enter-Action="addNewTask()" data-ng-hide="task.isEdit" />
+    </div>
+
+</div>
