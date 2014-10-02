@@ -1,2 +1,2 @@
 
-angular.module('clientApp', []);
+angular.module('clientApp', ['ngResource']);
