@@ -11,7 +11,10 @@
                                    ng-Select-Text>
             </div>
 
-            <button data-ng-click="removeTask(task)">Remove</button>
+            <button data-ng-click="removeTask(task)" >
+                Remove
+                <!--<img width="19" height="19" src="/content/images/cross.png"/>-->
+            </button>
         </li>
 
         <input class="txtAdd" type="text" data-ng-model="text" ng-Enter-Action="addNewTask()" data-ng-hide="task.isEdit" />
